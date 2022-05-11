@@ -8,15 +8,15 @@ int main()
 	Money a, b, c, d;
 	double x;
 
-	cout << "first sum: "; cin >> a;
-	cout << "second sum: "; cin >> b;
-
-	cout << "a - b: " << a - b;
+	cout << "First sum: "; cin >> a;
+	cout << "Second sum: "; cin >> b;
+	cout << endl << "first  sum = " << a << "second sum = " << b << endl;
+	cout << "first - second: " << a - b;
 	cout << "x = "; cin >> x;
 
 	cout << endl;
-	cout << "a * x: "<< a * x;
-	cout << "b * x: "<<b * x << endl;
+	cout << "first  * x: "<< a * x;
+	cout << "second * x: "<< b * x << endl;
 
 
 	if (a == b)

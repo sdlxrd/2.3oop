@@ -39,15 +39,21 @@ Money::operator string () const
 Money operator -(const Money& f, const Money& s)
 {
 	Money t(0, 0);
-	if (s.kop > f.kop)
-	{
-		t.grn = (f.grn-1) - s.grn;
-		t.kop = ((f.kop+10) - s.kop);
-	}
-	if (t.grn < 0)
+	if ((f.grn * 10) + f.kop < (s.grn * 10) + s.kop)
 	{
 		t.grn = 0;
 		t.kop = 0;
+		return t;
+	}
+	if (f.kop < s.kop)
+	{
+		t.grn = (f.grn - 1) - s.grn;
+		t.kop = ((f.kop + 10) - s.kop);
+	}
+	else
+	{
+		t.grn = (f.grn - s.grn);
+		t.kop = (f.kop - s.kop);
 	}
 	return t;
 }
